@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mira, ya quedó</title>
+  <style>
+    body {
+      margin: 0;
+      background: #1a1a1a;
+      color: white;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background: #e60026;
+      transform: rotate(-45deg);
+      animation: struggle 1.5s infinite;
+      box-shadow: 0 0 15px rgba(230, 0, 38, 0.4);
+      cursor: pointer;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #e60026;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 50px;
+    }
+
+    @keyframes struggle {
+      0%, 100% { transform: rotate(-45deg) scale(1); }
+      50% { transform: rotate(-45deg) scale(1.07); }
+    }
+
+    .message {
+      margin-top: 25px;
+      max-width: 300px;
+      text-align: center;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px dashed #e60026;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart" onclick="alert('Hola, te amo mucho.')"></div>
+  <div class="message">
+    MI AMOR<br>
+    Cada día amándote más, y como este corazón...<br><br>
+    el mío late siempre por ti.
+  </div>
+
+</body>
+</html>
